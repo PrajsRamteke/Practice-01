@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+      .chat-container {
+        height: calc(100% - 80px);
+        overflow-y: scroll;
+      }
+      .chat-input {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #f5f5f5;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <div class="col-12 chat-container">
+          <!-- Messages will be displayed here -->
+        </div>
+      </div>
+      <div class="row chat-input container">
+        <div class="col-10">
+          <input id="message" type="text" class="form-control" placeholder="Enter your message">
+        </div>
+        <div class="col-2">
+          <button id="send" class="btn btn-primary">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet@2.0.0/dist/posenet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.6/dist/tfjs-vis.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter@2.0.0/dist/tfjs-converter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm@2.0.0/dist/tfjs-backend-wasm.js"></script>
+      // Set up connection
+<script>
+  // Set up connection to server
+  const socket = io("http://localhost:3000");
+  
+  // Send message when button is clicked
+  document.getElementById("send").addEventListener("click", () => {
+    const message = document.getElementById("message").value;
+    socket.emit("sendMessage", message);
+  });
+  
+  // Display incoming messages
+  socket.on("newMessage", message => {
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("card");
+    messageElement.innerHTML = `
+      <div class="card-body">
+        ${message}
+      </div>
+    `;
+    document.querySelector(".chat-container").appendChild(messageElement);
+  });
+</script>

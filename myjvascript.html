@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript practice 1</title>
+  </head>
+  <style>
+    .parent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(255, 128, 128);
+      padding-bottom: 20px;
+    }
+    #sample {
+      font-weight: 600;
+      font-size: 24px;
+      font-family: serif;
+    }
+    .btn1 {
+      font-size: 20px;
+      background-color: rgb(56, 212, 45);
+      border: 2px solid black;
+      border-radius: 12px;
+      padding: 10px;
+      color: rgb(255, 240, 240);
+      transition: all 0.5s ease;
+    }
+    .btn1:hover {
+      background-color: rgb(29, 141, 29);
+      color: rgb(255, 255, 255);
+    }
+    .btn{
+        background-color: aqua;
+        padding: 20px;
+        border-radius: 10px;
+    }
+  </style>
+  <body>
+    <div class="parent" id="parent">
+      <p id="sample">change this sentence</p>
+      <div class="btn">
+        <button class="btn1" onclick="uhi()">Don't click</button>
+      </div>
+    </div>
+    <script>
+    //   function uhi() {
+    //     document.getElementById("sample").innerHTML = "my name is prajwal";
+    //   }
+      function uhi() {
+        document.getElementById("parent").style.display ="none";
+      }
+      
+    </script>
+  </body>
+</html>

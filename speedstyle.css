@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+.header{
+    width: 100%;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    padding: 0 8%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 120px;
+    background: rgb(0, 0, 0);
+}
+img{
+    width: 230px;
+}
+ul{
+    display: flex;
+    list-style: none;
+}
+ul li{
+    display: inline-block;
+    padding: 0 14px;
+  
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+
+}ul li a i{
+    padding: 0 6px;
+    align-items: flex-start;
+}
+ul li a:hover{
+    color: #1cbfff;
+   
+}
+.litlebar{
+    display: flex;
+    color: white;
+    justify-content: flex-start;
+   
+}
+.liltedeta{
+    color: white;
+    padding: 0 4px;
+}
+.liltedeta a{
+    text-decoration: none;
+    color: white; 
+    transition: 0.4s;
+}
+
+.liltedeta a:hover{
+    color: #1cbfff;
+}
+
+span{
+    padding: 0 6px;
+    color: rgb(130, 130, 130);
+}
+#win{
+    color: rgb(150, 152, 175);
+   text-decoration: none;
+   font-size: 17px;
+}
+#win:hover{
+    color: white;
+}
+.liltedeta a sup{
+    width: 3px;
+    size: 3px;
+    font-size: 50%;
+}
+.heading{
+    width: 732px;
+    height: 534px;
+    background: rgb(0, 0, 0);
+    padding: 54px 0;
+}
+#mainhead{
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.mainbox{
+    padding: 64px 0;
+}
+#mainhead sup{
+    width: 3px;
+    size: 3px;
+    font-size: 50%;
+}
